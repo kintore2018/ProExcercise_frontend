@@ -1,0 +1,66 @@
+<app-header></app-header>
+<main>
+  <section class="top">
+    <div class="top__contents">
+      <img src="assets/img/top.png" alt="" class="top__contents__img" />
+      <h2 class="message">
+        <span class="top__message">プロと一緒だから、</span>
+        <span class="top__message top__message__second">成果が出る。</span>
+        <span class="top__message top__message__third">成果が出るから、</span>
+        <span class="top__message top__message__fourth">たのしい。</span>
+      </h2>
+    </div>
+  </section>
+  <section class="work">
+    <div class="work__contents">
+      <div>
+        <span class="work__en__title">TRAINER</span>
+        <h2 class="work__ja__title">トレーナーを探す</h2>
+        <p class="work__text">
+          PROEX（プロエク）はパーソナルトレーナー検索サービスです。あなたにとって二人三脚となるトレーナーを探してみましょう。
+        </p>
+      </div>
+      <img src="assets/img/mock.png" alt="トレーナー一覧" class="work__img" oncontextmenu="return false;" onselectstart="return false;"
+        onmousedown="return false;" />
+    </div>
+    <a routerLink="/trainers" class="button--primary work__button">検索する</a>
+  </section>
+  <section class="flow">
+    <span class="flow__en__title">FLOW</span>
+    <h2 class="flow__ja__title">トレーニング開始までの流れ</h2>
+    <ol class="flow__list">
+      <li>
+        <span class="flow__list__en__title">1</span>
+        <h3>選ぶ</h3>
+        <p>あなたが話を聞いてみたいパーソナルトレーナーを選びます。</p>
+      </li>
+      <li>
+        <span class="flow__list__en__title">2</span>
+        <h3>話す</h3>
+        <p>
+          パーソナルトレーナーより連絡が届きます。プランの相談等を行います。
+        </p>
+      </li>
+      <li>
+        <span class="flow__list__en__title">3</span>
+        <h3>申し込む</h3>
+        <p>
+          各パーソナルトレーナーが用意している料金体系に従い、申し込みます。
+        </p>
+      </li>
+      <li>
+        <span class="flow__list__en__title">4</span>
+        <h3>開始する</h3>
+        <p>
+          パーソナルトレーナーと二人三脚で、あなたの理想のカラダを実現させましょう。
+        </p>
+      </li>
+    </ol>
+  </section>
+  <section class="appeal">
+    <h2>パーソナルトレーナー<br />を検索しよう</h2>
+    <img src="assets/img/trainer.svg" alt="" />
+    <a routerLink="/trainers" class="button--primary appeal__button">検索する</a>
+  </section>
+</main>
+<app-footer></app-footer>

@@ -1,0 +1,118 @@
+.container {
+  padding: 0 20px;
+  margin-top: 32px;
+}
+
+.title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 32px;
+
+  &__item {
+    display: inline-block;
+    width: calc((100% - 20px) / 2);
+    border: 1.6px solid #ECECF2;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    // box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .075);
+
+    &:nth-child(n+3) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.list__item__img {
+  position: relative;
+  height: 120px;
+  border-radius: 4px 4px 0 0;
+  background-image: url('/assets/img/harada.png');
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+
+  &__area {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 99;
+    padding: 0px 6px;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    color: #243647;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100%;
+    opacity: 0.25;
+    background: linear-gradient(-160deg, #eef2f3, #536976);
+  }
+}
+
+.list__item__info {
+  padding: 10px;
+
+  &__name {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #243647;
+  }
+
+  &__fee {
+    margin-top: -4px;
+    font-size: 1.2rem;
+    color: #7F7F7F;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  // space-betweenで両端にアイテムが配置されるのを解消するため
+  .list {
+    &::after {
+      content: "";
+      display: block;
+      width: 31.8%;
+    }
+  }
+
+  .list__item {
+    width: calc((100% - 40px) / 3);
+
+    &:nth-child(n+3) {
+      margin-top: 0;
+    }
+
+    &:nth-child(n+4) {
+      margin-top: 20px;
+    }
+  }
+
+  .list__item__img {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 0;
+  }
+}

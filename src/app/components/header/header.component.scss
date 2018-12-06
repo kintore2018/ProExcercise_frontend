@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  padding: 16px 20px;
+  border-bottom: 1px solid #ECECF2;
+}
+
+.logo {
+  color: #2755FE;
+}
+
+@media (min-width: 768px) {
+  :host {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :host {
+    padding: 40px 0;
+  }
+}

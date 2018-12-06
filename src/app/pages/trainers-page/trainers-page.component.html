@@ -1,0 +1,22 @@
+<app-header></app-header>
+<main>
+  <section class="container">
+    <h2 class="title">パーソナルトレーナーを探す</h2>
+    <ul class="list">
+      <ng-container *ngFor="let trainer of trainers">
+        <li class="list__item">
+          <a routerLink="/trainers/detail/{{trainer.id}}">
+            <div class="list__item__img">
+              <span class="list__item__img__area">{{ trainer.area }}</span>
+            </div>
+            <div class="list__item__info">
+              <h3 class="list__item__info__name">{{ trainer.name }}</h3>
+              <p class="list__item__info__fee">¥10000~/月</p>
+            </div>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+  </section>
+</main>
+<app-footer></app-footer>

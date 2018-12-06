@@ -1,0 +1,41 @@
+<app-header></app-header>
+<main>
+  <article class="profile">
+    <h2 class="title">プロフィール</h2>
+    <ng-container *ngFor='let trainerInfo of trainerDetail'>
+      <section class="profile__trainer">
+        <img src="assets/img/haraguchi.png" alt="" class="profile__trainer__img">
+        <div class="profile__trainer__name">
+          <h2 class="profile__trainer__name__ja">{{trainerInfo.name}}</h2>
+          <p class="profile__trainer__name__en">Yuya Hayashida</p>
+        </div>
+      </section>
+      <section class="profile__column">
+        <h3>自己紹介</h3>
+        <p>国士舘大学卒業後、RIZAPに入社。トレーニング歴１０年。１００名以上のボディメイクをサポート経験を経て独立。ただ痩せるだけでなく自分で維持できるようにトレーニング習慣をつけることと正しい食事の習慣を定着させないとリバウンドしてしまうため２つの習慣が身につくようにアドバイスさせていただいています！</p>
+      </section>
+      <section class="profile__column">
+        <h3>所属ジム</h3>
+        <p>MY routin GYM<br>JR山手線目黒駅、徒歩２分</p>
+      </section>
+      <section class="profile__column">
+        <h3>なぜトレーナーを目指したのか</h3>
+        <p>幼少期からずっとスポーツをしてきて高校入学時から本格的にウエイトトレーニングを始めました。高校では陸上でインターハイ3位や大学時に国体７位などの成績から結果を出すためのトレーニングとトレーニングの必要性と可能性を理解していると自負しているためこの知識や経験をトレーニングのやり方がわからないからやりたくてもできない人やそもそも必要性がわからずに太ってしまう人にお伝えしたかったためパーソナルトレーナーになることを決めました。１人１人の目標に合わせて食事やトレーニングをカスタマイズして結果を出せるのもパーソナルトレーナーの魅力です！</p>
+      </section>
+      <section class="profile__column">
+        <h3>趣味</h3>
+        <p>身体を動かすこと全般。ボーリング。ダーツ。ビリヤード。</p>
+      </section>
+      <section class="profile__column">
+        <h3>さいごにひとこと</h3>
+        <p>自身の経験をフルに生かしたくさんの人のボディメイクの目標を二人三脚で達成してきました！二度とダイエットしなくていいような身体と習慣を身につけたい方はぜひ僕にお手伝いさせてください！筋肉つけたい方は僕と同じくらいまでつける知識や方法は知っているのでお任せください！</p>
+      </section>
+    </ng-container>
+    <div class="apply">
+      <a href="#" class="apply-button">この人の話を聞いてみたい</a>
+    </div>
+  </article>
+</main>
+<!-- <app-footer></app-footer> -->
+
+<!-- クローラーが見に来た時だけ静的なHTMLを返す処理をサーバーサイドにやってもらう -->
