@@ -5,6 +5,7 @@ import {
   TrainerDetail,
   TrainerDetailApiService
 } from "../../services/trainer-detail-api.service";
+import {Observable} from "rxjs/index";
 
 @Component({
   selector: "app-trainer-detail-page",
@@ -12,7 +13,8 @@ import {
   styleUrls: ["./trainer-detail-page.component.scss"]
 })
 export class TrainerDetailPageComponent implements OnInit {
-  trainerDetail: TrainerDetail[];
+  trainerDetail: TrainerDetail;
+  trainerDetail$: Observable<TrainerDetail>;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,12 +28,17 @@ export class TrainerDetailPageComponent implements OnInit {
 
   private getTrainerDetail(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.trainerDetailAPI
-      .getTrainerDetail(id)
-      .subscribe((data: TrainerDetail[]) => {
-        this.trainerDetail = data;
-      });
+    this.trainerDetail$ = this.trainerDetailAPI.getTrainerDetail(id);
   }
 
-  private;
+  // 参考：https://stackblitz.com/edit/error-handling-with-angulars-async-pipe?file=app%2Fapp.component.ts
+
+  // private getTrainerDetail(): void {
+  //   const id = +this.route.snapshot.paramMap.get('id');
+  //   this.trainerDetailAPI
+  //     .getTrainerDetail(id)
+  //     .subscribe((data: TrainerDetail) => {
+  //       this.trainerDetail = data;
+  //     });
+  // }
 }

@@ -5,24 +5,19 @@
 }
 
 .logo {
-  color: #2755FE;
+  color: #2856FC;
 }
 
 @media (min-width: 768px) {
   :host {
-    max-width: 1024px;
+    //max-width: 1024px;
+    width: 100%;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 20px 40px;
   }
 
   .logo {
     font-size: 2.4rem;
   }
 
-}
-
-@media (min-width: 1024px) {
-  :host {
-    padding: 20px 0;
-  }
 }

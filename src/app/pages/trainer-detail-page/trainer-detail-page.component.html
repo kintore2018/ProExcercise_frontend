@@ -2,15 +2,14 @@
 <main>
   <article class="profile">
     <h2 class="title">プロフィール</h2>
-    <ng-container *ngFor='let trainerInfo of trainerDetail'>
+    <ng-container *ngIf="trainerDetail$ | async as trainerDetail;">
       <div class="trainer__contents">
         <section class="profile__trainer">
           <img src="assets/img/ebi.jpg" alt="" class="profile__trainer__img">
         </section>
         <div class="columns">
           <section class="trainer__name">
-            <!--<h2 class="profile__trainer__name__ja">{{trainerInfo.name}}</h2>-->
-            <h3 class="trainer__name__ja">林田 優哉</h3>
+            <h3 class="trainer__name__ja">{{ trainerDetail.name }}</h3>
             <p class="trainer__name__en">Yuya Hayashida</p>
           </section>
           <section class="profile__column">

@@ -6,7 +6,7 @@
   padding-bottom: 160px;
 }
 
-main {
+.profile {
   margin-top: 32px;
 }
 
@@ -67,7 +67,7 @@ main {
   margin-top: -4px;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #7F7F7F;
+    color: #7F7F7F;
   letter-spacing: 0.4px;
 }
 
@@ -116,11 +116,14 @@ main {
 @media (min-width: 768px) {
   .profile {
     max-width: 720px;
-    margin: 0 auto;
+    margin: 64px auto 0;
+  }
+
+  .trainer__contents {
+    margin-top: 48px;
   }
 
   .profile__trainer__img {
-    //border-radius: 4px;
     vertical-align: bottom;
   }
 

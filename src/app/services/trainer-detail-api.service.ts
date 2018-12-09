@@ -9,11 +9,11 @@ export interface TrainerDetail {
 
 @Injectable({ providedIn: "root" })
 export class TrainerDetailApiService {
-  url = "assets/mock/detail.json";
+  url = "/assets/mock/detail.json";
 
   constructor(private http: HttpClient) {}
 
-  getTrainerDetail(id): Observable<TrainerDetail[]> {
-    return this.http.get<TrainerDetail[]>(this.url);
+  getTrainerDetail(id): Observable<TrainerDetail> {
+    return this.http.get<TrainerDetail>(this.url);
   }
 }
