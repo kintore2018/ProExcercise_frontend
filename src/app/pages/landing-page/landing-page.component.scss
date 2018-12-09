@@ -28,7 +28,7 @@
 
 .message {
   position: absolute;
-  top: 20%;
+  bottom: 11%;
   left: 5%;
   font-weight: bold;
 }
@@ -58,7 +58,7 @@
 
 @media (max-width: 320px) {
   .message {
-    top: 32px;
+    bottom: 10%;
   }
 }
 
