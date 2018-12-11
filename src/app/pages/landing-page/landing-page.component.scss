@@ -28,7 +28,7 @@
 
 .message {
   position: absolute;
-  bottom: 11%;
+  bottom: 40px;
   left: 5%;
   font-weight: bold;
 }
@@ -40,7 +40,7 @@
   background-color: #ffffff;
 
   &+& {
-    margin-top: 8px;
+    margin-top: 6px;
   }
 }
 
@@ -183,14 +183,14 @@
   }
 
   &__en__title {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
+    letter-spacing: 1.6px;
     font-weight: 500;
     color: #333333;
   }
 
   h3 {
-    display: inline-block;
-    margin-left: 8px;
+    margin-top: -4px;
     font-size: 2rem;
     font-weight: bold;
     color: #2856FC;
