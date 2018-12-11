@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 // common
+@import "./reset.scss";
+
 html {
   font-size: 62.5%;
 }
@@ -25,18 +27,4 @@ body {
   text-align: justify;
   color: #333333;
   -webkit-font-smoothing: antialiased;
-}
-
-// https://qiita.com/rana_kualu/items/8b4ab5c6837392420ad4 *セレクタでリセットすると重くなるから辞めたほうがよい
-* {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  list-style: none;
-  box-sizing: border-box;
-
-  &::before,
-  &::after {
-    box-sizing: border-box;
-  }
 }
