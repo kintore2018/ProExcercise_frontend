@@ -13,7 +13,6 @@ import {Observable} from "rxjs/index";
   styleUrls: ["./trainer-detail-page.component.scss"]
 })
 export class TrainerDetailPageComponent implements OnInit {
-  trainerDetail: TrainerDetail;
   trainerDetail$: Observable<TrainerDetail>;
 
   constructor(
@@ -29,7 +28,6 @@ export class TrainerDetailPageComponent implements OnInit {
   private getTrainerDetail(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.trainerDetail$ = this.trainerDetailAPI.getTrainerDetail(id);
-    console.log(this.trainerDetail$);
   }
 
   // 参考：https://stackblitz.com/edit/error-handling-with-angulars-async-pipe?file=app%2Fapp.component.ts

@@ -3,6 +3,7 @@ import {
   // TrainerList,
   TrainerListApiService
 } from "../../services/trainer-list-api.service";
+import {Observable} from "rxjs/index";
 
 @Component({
   selector: "app-trainers-page",
@@ -10,7 +11,7 @@ import {
   styleUrls: ["./trainers-page.component.scss"]
 })
 export class TrainersPageComponent implements OnInit {
-  trainers;
+  trainers$: Observable<any>;
 
   constructor(private trainerListAPI: TrainerListApiService) {}
 
@@ -19,10 +20,7 @@ export class TrainersPageComponent implements OnInit {
   }
 
   private getTrainers(): void {
-    this.trainerListAPI.getTrainers().subscribe((data) => {
-      console.log(data);
-      this.trainers = data;
-    });
+    this.trainers$ = this.trainerListAPI.getTrainers();
   }
 }
 

@@ -3,8 +3,18 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 export interface TrainerDetail {
-  name: string;
-  area: string;
+  access: string;
+  belonging: string;
+  comment: string;
+  fee: string;
+  hobby: string;
+  imagePath: string
+  introduction: string
+  reason: string;
+  salesPoint: string;
+  trainerId: number;
+  trainerName: string;
+  trainerNameEn: string;
 }
 
 @Injectable({ providedIn: "root" })

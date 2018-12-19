@@ -11,13 +11,11 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class TrainerListApiService {
-  // url = "/api/trainer/list";
   url = "https://api-proex-2018.herokuapp.com/api/trainer/list";
 
   constructor(private http: HttpClient) {}
 
   getTrainers(): Observable<any> {
-    // つなぎこみ時
     return this.http.get<any>(this.url);
   }
 }
