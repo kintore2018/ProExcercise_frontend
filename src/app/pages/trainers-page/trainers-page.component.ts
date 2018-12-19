@@ -10,7 +10,7 @@ import {
   styleUrls: ["./trainers-page.component.scss"]
 })
 export class TrainersPageComponent implements OnInit {
-  trainers;
+  trainers = [];
 
   constructor(private trainerListAPI: TrainerListApiService) {}
 
