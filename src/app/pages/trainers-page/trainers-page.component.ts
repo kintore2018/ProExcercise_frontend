@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import {
-  TrainerList,
+  // TrainerList,
   TrainerListApiService
 } from "../../services/trainer-list-api.service";
 
@@ -10,7 +10,7 @@ import {
   styleUrls: ["./trainers-page.component.scss"]
 })
 export class TrainersPageComponent implements OnInit {
-  trainers: TrainerList[];
+  trainers = [];
 
   constructor(private trainerListAPI: TrainerListApiService) {}
 
@@ -19,7 +19,7 @@ export class TrainersPageComponent implements OnInit {
   }
 
   private getTrainers(): void {
-    this.trainerListAPI.getTrainers().subscribe((data: TrainerList[]) => {
+    this.trainerListAPI.getTrainers().subscribe((data) => {
       console.log(data);
       this.trainers = data;
     });
