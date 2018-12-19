@@ -3,7 +3,7 @@
   <section class="container">
     <h2 class="title">パーソナルトレーナーを探す</h2>
     <ul class="list">
-      <ng-container *ngFor="let trainer of trainers.trainers">
+      <ng-container *ngFor="let trainer of trainers">
         <li class="list__item">
           <a routerLink="/trainers/detail/{{trainer.id}}">
             <div class="list__item__img">
