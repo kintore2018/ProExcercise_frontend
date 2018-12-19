@@ -11,7 +11,7 @@ export interface TrainerList {
   providedIn: "root"
 })
 export class TrainerListApiService {
-  url = "assets/mock/sample.json";
+  url = "/api/trainer/list";
 
   constructor(private http: HttpClient) {}
 
