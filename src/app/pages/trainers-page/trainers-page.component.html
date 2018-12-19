@@ -5,13 +5,13 @@
     <ul class="list">
       <ng-container *ngFor="let trainer of trainers.trainers">
         <li class="list__item">
-          <a routerLink="/trainers/detail/{{trainer.id}}">
+          <a routerLink="/trainers/detail/{{trainer.trainerId}}">
             <div class="list__item__img">
               <img src="assets/img/face.jpg">
             </div>
             <div class="list__item__info">
               <p class="list__item__info__fee">{{ trainer.area }}</p>
-              <h3 class="list__item__info__name">{{ trainer.name }}</h3>
+              <h3 class="list__item__info__name">{{ trainer.trainerName }}</h3>
             </div>
           </a>
         </li>
