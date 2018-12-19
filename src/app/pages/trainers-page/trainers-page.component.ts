@@ -20,6 +20,7 @@ export class TrainersPageComponent implements OnInit {
 
   private getTrainers(): void {
     this.trainerListAPI.getTrainers().subscribe((data: TrainerList[]) => {
+      console.log(data);
       this.trainers = data;
     });
   }
