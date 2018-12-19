@@ -11,7 +11,8 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class TrainerListApiService {
-  url = "/api/trainer/list";
+  // url = "/api/trainer/list";
+  url = "https://api-proex-2018.herokuapp.com/api/trainer/list";
 
   constructor(private http: HttpClient) {}
 
