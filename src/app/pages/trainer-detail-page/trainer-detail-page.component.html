@@ -24,14 +24,18 @@
             <h3>アクセス</h3>
             <p>{{ trainerDetail.access }}</p>
           </section>
-          <section class="profile__column">
-            <h3>料金</h3>
-            <p>{{ trainerDetail.fee }}</p>
-          </section>
-          <section class="profile__column">
-            <h3>なぜトレーナーを目指したのか</h3>
-            <p>{{ trainerDetail.reason }}</p>
-          </section>
+          <ng-container *ngIf="trainerDetail.fee !== null">
+            <section class="profile__column">
+              <h3>料金</h3>
+              <p>{{ trainerDetail.fee }}</p>
+            </section>
+          </ng-container>
+          <ng-container *ngIf="trainerDetail.reason !== null">
+            <section class="profile__column">
+              <h3>なぜトレーナーを目指したのか</h3>
+              <p>{{ trainerDetail.reason }}</p>
+            </section>
+          </ng-container>
           <section class="profile__column">
             <h3>お客様のどのような悩みを解決することが得意か</h3>
             <p>{{ trainerDetail.salesPoint }}</p>
