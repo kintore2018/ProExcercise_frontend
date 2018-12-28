@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
 
 // export interface TrainerList {
-//   name: string;
+//   name: swwtring;
 //   area: string;
 // }
 
@@ -12,6 +12,7 @@ import { Observable } from "rxjs";
 })
 export class TrainerListApiService {
   url = "https://api-proex-2018.herokuapp.com/api/trainer/list";
+  // url = "assets/mock/sample.json";
 
   constructor(private http: HttpClient) {}
 

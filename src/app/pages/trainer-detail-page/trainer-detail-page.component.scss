@@ -7,7 +7,7 @@
 }
 
 .profile {
-  margin-top: 32px;
+  margin: 24px 20px 0;
 }
 
 .title {
@@ -16,19 +16,14 @@
   font-weight: bold;
 }
 
-.trainer__contents {
-  position: relative;
-  margin: 24px 20px 0;
-}
-
-
 .profile__trainer {
-  //position: relative;
-  //margin-top: 32px;
+  position: relative;
+  margin-top: 16px;
 
   &__img {
     width: 100%;
-    //height: 300px;
+    height: 240px;
+    border-radius: 4px;
     object-fit: cover;
     vertical-align: bottom;
   }
@@ -44,16 +39,8 @@
   }
 }
 
-.columns {
-  position: absolute;
-  top: 90%;
-  z-index: 5;
-  margin: 0 20px;
-  background-color: #FFFFFF;
-}
-
 .trainer__name {
-  margin-top: 32px;
+  margin-top: 16px;
   padding: 0 10px;
   text-align: center;
 }
@@ -76,6 +63,7 @@
 
   h3 {
     font-size: 2rem;
+    line-height: 1.6;
   }
 
   p {
@@ -124,6 +112,7 @@
   }
 
   .profile__trainer__img {
+    height: 400px;
     vertical-align: bottom;
   }
 

@@ -1,4 +1,13 @@
-:host {
+.campaign {
+  padding: 4px 0;
+  background: #2856FC;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.header {
   display: block;
   padding: 16px 20px;
   border-bottom: 1px solid #ECECF2;
@@ -13,7 +22,11 @@
     //max-width: 1024px;
     width: 100%;
     margin: 0 auto;
-    padding: 20px 40px;
+    //padding: 20px 40px;
+  }
+
+  .campaign {
+    min-width: 1064px;
   }
 
   .logo {
