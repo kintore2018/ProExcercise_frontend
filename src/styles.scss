@@ -3,12 +3,13 @@
 @import "./reset.scss";
 
 html {
+  height: 100%;
   font-size: 62.5%;
 }
 
 body {
-  font-family: "YakuHanJP",
-  -apple-system,
+  height: 100%;
+  font-family: -apple-system,
   BlinkMacSystemFont,
   "Helvetica Neue",
   "游ゴシック Medium",
