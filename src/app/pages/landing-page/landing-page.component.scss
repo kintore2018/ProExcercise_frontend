@@ -127,6 +127,10 @@
     margin-top: 16px;
     font-size: 1.4rem;
     letter-spacing: 1.6px;
+
+    & > strong {
+      font-weight: 100;
+    }
   }
 
   &__img {
