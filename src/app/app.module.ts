@@ -9,6 +9,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { LandingPageComponent } from "./pages/landing-page/landing-page.component";
 import { TrainersPageComponent } from "./pages/trainers-page/trainers-page.component";
 import { TrainerDetailPageComponent } from "./pages/trainer-detail-page/trainer-detail-page.component";
+import { PrivacyPolicyPageComponent } from './pages/privacy-policy-page/privacy-policy-page.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TrainerDetailPageComponent } from "./pages/trainer-detail-page/trainer-
     TrainersPageComponent,
     HeaderComponent,
     FooterComponent,
-    TrainerDetailPageComponent
+    TrainerDetailPageComponent,
+    PrivacyPolicyPageComponent
   ],
   imports: [
     BrowserModule,

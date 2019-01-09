@@ -1,0 +1,42 @@
+.container {
+  padding: 0 20px;
+  margin-top: 32px;
+  font-size: 1.4rem;
+
+  h2 {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  p {
+    margin-top: 20px;
+  }
+}
+
+.privacy__list__item {
+  margin-top: 32px;
+
+  & + .privacy__list__item {
+    margin-top: 32px;
+  }
+}
+
+.privacy__text {
+  list-style-type: decimal;
+  margin-left: 20px;
+}
+
+.privacy__detail {
+  list-style-type: upper-roman;
+  margin-left: 30px;
+
+  &__item {
+    list-style-type: katakana;
+    margin-left: 40px;
+  }
+}
+
+.privacy__creation__date {
+  margin-top: 40px;
+  text-align: right;
+}
