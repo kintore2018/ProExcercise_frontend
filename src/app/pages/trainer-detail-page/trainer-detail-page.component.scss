@@ -102,6 +102,26 @@
   }
 }
 
+.loader {
+  position: absolute;
+  top: 28px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+
+  > img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: auto;
+    margin: auto;
+  }
+}
+
 @media (min-width: 768px) {
   .profile {
     max-width: 720px;

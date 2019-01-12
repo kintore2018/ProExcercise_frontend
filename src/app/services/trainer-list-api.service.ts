@@ -4,8 +4,6 @@ import { HttpErrorResponse } from "@angular/common/http"
 import { Observable, throwError } from "rxjs";
 import { Subject } from "rxjs/index"
 import {catchError, retry} from "rxjs/internal/operators";
-import { of } from "rxjs/index"
-import {error} from "util";
 
 @Injectable({
   providedIn: "root"

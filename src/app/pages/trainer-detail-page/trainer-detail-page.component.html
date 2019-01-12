@@ -2,16 +2,13 @@
 <main>
   <article class="profile">
     <h2 class="title">プロフィール</h2>
-    <ng-container *ngIf="trainerDetail$ | async as trainerDetail;">
+    <ng-container *ngIf="trainerDetail$ | async as trainerDetail; else loadingOrError">
       <section class="profile__trainer">
         <img src={{trainerDetail.imagePath}} alt="トレーナー画像" class="profile__trainer__img">
-        <!--<img src="assets/img/face.jpg" alt="トレーナー画像" class="profile__trainer__img">-->
       </section>
       <section class="trainer__name">
         <h3 class="trainer__name__ja">{{ trainerDetail.trainerName }}</h3>
         <p class="trainer__name__en">{{ trainerDetail.trainerNameEn }}</p>
-        <!--<h3 class="trainer__name__ja">{{ trainerDetail.name }}</h3>-->
-        <!--<p class="trainer__name__en">Yuya Hayashida</p>-->
       </section>
       <ng-container *ngIf="trainerDetail.introduction !== 'null'">
         <section class="profile__column">
@@ -56,11 +53,14 @@
         </section>
       </ng-container>
     </ng-container>
+
+    <ng-template #loadingOrError>
+      <div class="loader">
+        <img src="assets/img/spinner.gif" alt="読み込み中">
+      </div>
+    </ng-template>
     <div class="apply">
       <a href="https://form.run/@proec-request" target="_blank" class="apply-button">この人の話を聞いてみたい</a>
     </div>
   </article>
 </main>
-<!-- <app-footer></app-footer> -->
-
-<!-- クローラーが見に来た時だけ静的なHTMLを返す処理をサーバーサイドにやってもらう -->

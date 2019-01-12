@@ -7,16 +7,12 @@
         <ng-container *ngFor="let trainer of trainers.trainers">
           <li class="list__item">
             <a routerLink="/trainers/detail/{{trainer.trainerId}}">
-            <!--<a routerLink="/trainers/detail/{{trainer.id}}">-->
               <div class="list__item__img">
                 <img src={{trainer.imagePath}} alt="トレーナー画像">
-                <!--<img src="assets/img/face.jpg" alt="トレーナー画像">-->
               </div>
               <div class="list__item__info">
                 <p class="list__item__info__fee">{{ trainer.area }}</p>
-                <!--<p class="list__item__info__fee">{{ trainer.area }}</p>-->
                 <h3 class="list__item__info__name">{{ trainer.trainerName }}</h3>
-                <!--<h3 class="list__item__info__name">{{ trainer.name }}</h3>-->
               </div>
             </a>
           </li>
@@ -25,14 +21,9 @@
     </ng-container>
 
     <ng-template #loadingOrError>
-      <ng-container *ngIf="errorLoading$ | async; else loading">
-        <p>エラーです</p>
-      </ng-container>
-      <ng-template #loading>
-        <div class="loader">
-          <img src="assets/img/spinner.gif" alt="読み込み中">
-        </div>
-      </ng-template>
+      <div class="loader">
+        <img src="assets/img/spinner.gif" alt="読み込み中">
+      </div>
     </ng-template>
   </section>
 </main>
