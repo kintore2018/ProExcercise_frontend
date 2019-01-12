@@ -4,6 +4,10 @@
   background-color: #333333;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 .footer__list {
   &+& {
     margin-top: 24px;
