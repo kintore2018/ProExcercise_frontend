@@ -2,7 +2,7 @@
 <main>
   <section class="container">
     <h2 class="title">パーソナルトレーナーを探す</h2>
-    <ng-container *ngIf="trainers$ | async as trainers;">
+    <ng-container *ngIf="trainers$ | async as trainers; else loadingOrError">
       <ul class="list">
         <ng-container *ngFor="let trainer of trainers.trainers">
           <li class="list__item">
@@ -23,6 +23,17 @@
         </ng-container>
       </ul>
     </ng-container>
+
+    <ng-template #loadingOrError>
+      <ng-container *ngIf="errorLoading$ | async; else loading">
+        <p>エラーです</p>
+      </ng-container>
+      <ng-template #loading>
+        <div class="loader">
+          <img src="assets/img/spinner.gif" alt="読み込み中">
+        </div>
+      </ng-template>
+    </ng-template>
   </section>
 </main>
 <app-footer></app-footer>
