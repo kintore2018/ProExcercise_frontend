@@ -59,6 +59,7 @@
     margin-top: -6px;
     font-size: 1.6rem;
     font-weight: bold;
+    text-align: center;
     color: #333333;
   }
 
@@ -120,7 +121,7 @@
     }
 
     &:nth-child(n+4) {
-      margin-top: 20px;
+      margin-top: 32px;
     }
   }
 
@@ -130,5 +131,9 @@
       height: 240px;
       object-fit: cover;
     }
+  }
+
+  .list__item__info__name {
+    font-size: 1.8rem;
   }
 }
