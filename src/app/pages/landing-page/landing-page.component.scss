@@ -305,8 +305,12 @@
       font-size: 3rem;
     }
 
+    img {
+      width: 300px;
+    }
+
     &__button {
-      margin: 56px auto;
+      margin: 64px auto;
     }
   }
 }
