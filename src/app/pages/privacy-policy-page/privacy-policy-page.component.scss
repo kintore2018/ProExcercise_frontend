@@ -40,3 +40,10 @@
   margin-top: 40px;
   text-align: right;
 }
+
+@media (min-width: 768px) {
+  .container {
+    width: 1024px;
+    margin: 64px auto 0;
+  }
+}

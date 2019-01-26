@@ -48,10 +48,6 @@
   font-size: 2rem;
   line-height: 1.6;
   background-color: #ffffff;
-
-  &+& {
-    margin-top: 6px;
-  }
 }
 
 .top__message__second {
@@ -88,10 +84,6 @@
 
   .top__message {
     font-size: 3.6vw;
-
-    &+& {
-      margin-top: 16px;
-    }
   }
 }
 
