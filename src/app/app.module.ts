@@ -10,6 +10,7 @@ import { LandingPageComponent } from "./pages/landing-page/landing-page.componen
 import { TrainersPageComponent } from "./pages/trainers-page/trainers-page.component";
 import { TrainerDetailPageComponent } from "./pages/trainer-detail-page/trainer-detail-page.component";
 import { PrivacyPolicyPageComponent } from './pages/privacy-policy-page/privacy-policy-page.component';
+import { RequestFormPageComponent } from './pages/request-form-page/request-form-page.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PrivacyPolicyPageComponent } from './pages/privacy-policy-page/privacy-
     HeaderComponent,
     FooterComponent,
     TrainerDetailPageComponent,
-    PrivacyPolicyPageComponent
+    PrivacyPolicyPageComponent,
+    RequestFormPageComponent
   ],
   imports: [
     BrowserModule,
