@@ -24,10 +24,6 @@ const routes: Routes = [
     component: PrivacyPolicyPageComponent
   },
   {
-    path: 'request',
-    component: RequestFormPageComponent
-  },
-  {
     path: '**',
     redirectTo: ''
   }
