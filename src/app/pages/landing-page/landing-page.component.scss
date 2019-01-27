@@ -43,23 +43,11 @@
 }
 
 .top__message {
-  display: block;
+  display: inline-block;
   padding: 0 0 0 4px;
   font-size: 2rem;
   line-height: 1.6;
-  background-color: #ffffff;
-}
-
-.top__message__second {
-  width: 68%;
-}
-
-.top__message__third {
-  width: 90%;
-}
-
-.top__message__fourth {
-  width: 57%;
+  background-color: #FFFFFF;
 }
 
 @media (max-width: 320px) {
@@ -70,8 +58,6 @@
 
 @media (min-width: 768px) {
   .top {
-    min-width: 1064px;
-
     &__contents {
       height: 80vh;
       margin: 0 auto;
@@ -146,7 +132,7 @@
 
 @media (min-width: 768px) {
   .work {
-    width: 1024px;
+    max-width: 1024px;
     margin: 180px auto 0;
   }
 
@@ -195,9 +181,9 @@
 
   li {
     padding: 24px;
-    border: 2px solid #ececf2;
+    border: 2px solid #ECECF2;
     border-radius: 4px;
-    background-color: #f7f7f7;
+    background-color: #F7F7F7;
   }
 
   li+li {
@@ -206,8 +192,8 @@
 
   &__en__title {
     font-size: 1.2rem;
-    letter-spacing: 1.6px;
     font-weight: 500;
+    letter-spacing: 1.6px;
     color: #333333;
   }
 
@@ -227,7 +213,7 @@
 
 @media (min-width: 768px) {
   .flow {
-    width: 1024px;
+    max-width: 1024px;
     margin: 180px auto 0;
 
     &__en__title {
@@ -248,7 +234,7 @@
       width: calc((100% - 20px) / 4);
     }
 
-    li+li {
+    li + li {
       margin-top: 0;
       margin-left: 20px;
     }
@@ -289,7 +275,6 @@
 
 @media (min-width: 768px) {
   .appeal {
-    min-width: 1064px;
     margin-top: 180px;
     padding: 80px 0;
 
