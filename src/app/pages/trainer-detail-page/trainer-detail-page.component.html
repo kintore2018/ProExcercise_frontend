@@ -25,28 +25,12 @@
       </section>
       <section class="profile__column">
         <h3>料金（税別）</h3>
-        <ul class="fee">
-          <li class="profile__fee">
-            <span class="profile__fee_title">体験</span>
-            <span class="profile__fee_money">{{ trainerDetail.trialFee }}</span>
-          </li>
-          <li class="profile__fee">
-            <span class="profile__fee_title">入会</span>
-            <span class="profile__fee_money">{{ trainerDetail.membershipFee }}</span>
-          </li>
-          <li class="profile__fee">
-            <span class="profile__fee_title">コース</span>
-            <span class="profile__fee_money">{{ trainerDetail.fee }}</span>
-          </li>
-        </ul>
-
-
-        <!--<h4 class="profile__fee_title">体験</h4>-->
-        <!--<p class="profile__fee">{{ trainerDetail.trialFee }}</p>-->
-        <!--<h4 class="profile__fee_title">入会</h4>-->
-        <!--<p class="profile__fee">{{ trainerDetail.membershipFee }}</p>-->
-        <!--<h4 class="profile__fee_title">コース</h4>-->
-        <!--<p class="profile__fee">{{ trainerDetail.fee }}</p>-->
+        <h4 class="profile__fee_title">体験料金</h4>
+        <p class="profile__fee">{{ trainerDetail.trialFee }}</p>
+        <h4 class="profile__fee_title">入会料金</h4>
+        <p class="profile__fee">{{ trainerDetail.membershipFee }}</p>
+        <h4 class="profile__fee_title">コース料金</h4>
+        <p class="profile__fee">{{ trainerDetail.fee }}</p>
       </section>
       <ng-container *ngIf="trainerDetail.reason !== 'null'">
         <section class="profile__column">
