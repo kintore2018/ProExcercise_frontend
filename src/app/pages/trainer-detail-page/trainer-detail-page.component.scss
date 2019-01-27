@@ -64,14 +64,58 @@
     line-height: 1.6;
   }
 
-  .profile__fee_title {
-    margin-top: 8px;
-    font-size: 1.4rem;
+  //TODO
+  //.profile__fee_title {
+  //  margin-top: 8px;
+  //  font-size: 1.4rem;
+  //}
+  //
+  //.profile__fee {
+  //  margin-top: 0;
+  //}
+
+  //TODO
+  .fee {
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    border-right: none;
+    margin: 0 0 40px;
   }
 
   .profile__fee {
-    margin-top: 0;
+    flex-basis: 25%;
+    list-style: none;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
   }
+
+  .profile__fee_title {
+    flex-basis: 81%;
+    padding: 4px 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    line-height: 1.4;
+  }
+
+  .profile__fee_money {
+    flex-basis: 19%;
+    border-left: 1px solid #ddd;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
 
   p {
     margin-top: 8px;
