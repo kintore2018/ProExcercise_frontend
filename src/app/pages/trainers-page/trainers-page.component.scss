@@ -98,7 +98,9 @@
 
 @media (min-width: 768px) {
   .container {
-    margin: 64px auto 0;
+    max-width: 1024px;
+    margin: auto;
+    padding-bottom: 32px;
   }
 
   // space-betweenで両端にアイテムが配置されるのを解消するため
