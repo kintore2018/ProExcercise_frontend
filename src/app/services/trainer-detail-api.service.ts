@@ -4,7 +4,7 @@ import { HttpErrorResponse } from "@angular/common/http"
 import { Observable, throwError } from "rxjs";
 import { Subject } from "rxjs/index"
 import {catchError, retry} from "rxjs/internal/operators";
-
+import {environment} from "../../environments/environment";
 
 export interface TrainerDetail {
   access: string;
@@ -23,7 +23,7 @@ export interface TrainerDetail {
 
 @Injectable({ providedIn: "root" })
 export class TrainerDetailApiService {
-  url = "https://api-proex-2018.herokuapp.com/api/trainer/details/";
+  url = environment.apiBaseUrl + "api/trainer/details/";
   // url = "assets/mock/detail.json";
 
   constructor(private http: HttpClient) {}

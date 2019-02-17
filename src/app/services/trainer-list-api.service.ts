@@ -4,13 +4,14 @@ import { HttpErrorResponse } from "@angular/common/http"
 import { Observable, throwError } from "rxjs";
 import { Subject } from "rxjs/index"
 import {catchError, retry} from "rxjs/internal/operators";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: "root"
 })
 export class TrainerListApiService {
   loadingError$ = new Subject<boolean>();
-  url = "https://api-proex-2018.herokuapp.com/api/trainer/list";
+  url = environment.apiBaseUrl + "api/trainer/list";
   // url = "assets/mock/sample.json";
 
   constructor(private http: HttpClient) {}
