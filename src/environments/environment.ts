@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  apiBaseUrl: 'https://api-proex-2018.herokuapp.com/'
-  // apiBaseUrl: 'http://localhost:8080/'
+  apiBaseUrl: 'http://localhost:8080/'
 };
 
 /*
