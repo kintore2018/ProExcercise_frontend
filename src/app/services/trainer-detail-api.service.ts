@@ -1,10 +1,9 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { HttpErrorResponse } from "@angular/common/http"
-import { Observable, throwError } from "rxjs";
-import { Subject } from "rxjs/index"
-import {catchError, retry} from "rxjs/internal/operators";
-import {environment} from "../../environments/environment";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import {catchError, retry} from 'rxjs/internal/operators';
+import {environment} from '../../environments/environment';
 
 export interface TrainerDetail {
   access: string;
@@ -12,8 +11,8 @@ export interface TrainerDetail {
   comment: string;
   fee: string;
   hobby: string;
-  imagePath: string
-  introduction: string
+  imagePath: string;
+  introduction: string;
   reason: string;
   salesPoint: string;
   trainerId: number;
@@ -21,10 +20,10 @@ export interface TrainerDetail {
   trainerNameEn: string;
 }
 
-@Injectable({ providedIn: "root" })
+@Injectable({ providedIn: 'root' })
 export class TrainerDetailApiService {
-  url = environment.apiBaseUrl + "api/trainer/details/";
-  // url = "assets/mock/detail.json";
+  url = environment.apiBaseUrl + 'api/trainer/details/';
+  // url = 'assets/mock/detail.json';
 
   constructor(private http: HttpClient) {}
 
@@ -50,7 +49,7 @@ export class TrainerDetailApiService {
     // return an observable with a user-facing error message
     return throwError(
       alert('通信エラーが発生しました。ブラウザを再読み込みしてください。'));
-  };
+  }
 
 
   // demo用
