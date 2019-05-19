@@ -22,122 +22,60 @@
 
 // top
 .top {
-  &__contents {
-    position: relative;
+  margin-top: 32px;
+  padding: 0 20px;
+
+  &__img {
     width: 100%;
-    height: 234px;
-    background: url('../../../assets/img/top.jpg');
+    height: 0;
+    padding-top: calc(2 / 3 * 100%);
+    background: url('../../../assets/img/mock.jpg') center center / cover no-repeat;
     background-size: cover;
   }
-
-  &__contents__img {
-    width: 100%;
+  &__contents__title {
+    margin-top: 24px;
+    font-size: 2rem;
+    line-height: 1.6;
+    letter-spacing: 1.2px;
   }
-}
 
-.message {
-  position: absolute;
-  top: 22%;
-  left: 5%;
-  font-weight: bold;
-}
+  &__contents__text {
+    margin-top: 12px;
+    font-size: 1.4rem;
+    letter-spacing: 1.2px;
+  }
 
-.top__message {
-  display: inline-block;
-  padding: 0 0 0 4px;
-  font-size: 2rem;
-  line-height: 1.6;
-  background-color: #FFFFFF;
-}
-
-@media (max-width: 320px) {
-  .message {
-    bottom: 10%;
+  &__button {
+    margin: 32px auto 0;
   }
 }
 
 @media (min-width: 768px) {
   .top {
-    &__contents {
-      height: 80vh;
-      margin: 0 auto;
-    }
-  }
-
-  .message {
-    left: 10%;
-  }
-
-  .top__message {
-    font-size: 3.6vw;
-  }
-}
-
-// work
-.work {
-  padding: 0 20px;
-  margin-top: 100px;
-
-  .work__contents {
-    position: relative;
-  }
-
-  &__ja__title {
-    margin: -4px 0 0 -4px;
-    font-size: 2rem;
-    font-weight: bold;
-    white-space: nowrap;
-  }
-
-  &__text {
-    margin-top: 16px;
-    font-size: 1.4rem;
-    letter-spacing: 1.6px;
-
-    & > strong {
-      font-weight: 100;
-    }
-  }
-
-  &__img {
-    width: 100%;
-    height: 0;
-    margin-top: 24px;
-    padding-top: calc(2 / 3 * 100%);
-    background: url('../../../assets/img/mock.jpg') center center / cover no-repeat;
-    background-size: cover;
-  }
-
-  &__button {
-    margin: 32px auto;
-  }
-}
-
-@media (min-width: 768px) {
-  .work {
     display: flex;
     flex-direction: row-reverse;
     max-width: 1024px;
     margin: 100px auto 0;
+
+    &__contents {
+      padding-right: 32px;
+    }
+
+    &__contents__title {
+      font-size: 2.8rem;
+    }
+
+    &__contents__text {
+      margin-top: 24px;
+      font-size: 1.6rem;
+    }
+
+    &__button {
+      margin: 32px 0;
+    }
   }
 
-  .work__en__title {
-    font-size: 2rem;
-  }
-
-  .work__ja__title {
-    font-size: 3rem;
-  }
-
-  .work__text {
-    margin-right: 24px;
-  }
-
-  .work__contents {
-    display: flex;
-  }
-
-  .work__img {
+  .top__img {
     padding-top: calc(1 / 3 * 100%);
 
     &:after {
