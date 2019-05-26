@@ -2,8 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
-import {catchError, retry} from 'rxjs/internal/operators';
-import {environment} from '../../environments/environment';
+import { catchError, retry } from 'rxjs/internal/operators';
 
 export interface TrainerDetail {
   access: string;
@@ -22,7 +21,7 @@ export interface TrainerDetail {
 
 @Injectable({ providedIn: 'root' })
 export class TrainerDetailApiService {
-  url = 'api/trainer/details/';
+  url = '/api/trainer/details/';
 
   constructor(private http: HttpClient) {}
 

@@ -132,17 +132,30 @@
       }
   
       li > a {
-        position: relative;
-        display: block;
+        display: flex;
+        justify-content: space-between;
         font-size: 1.6rem;
         font-weight: bold;
         color: #333333;
       }
 
-      // .arrow {
-      //   background: url('../../../assets/img/arrow-right.svg') center center / cover no-repeat;
-      //   background-size: cover;
-      // }
+      .arrow {
+        position: relative;
+
+        &::after {
+          content: '';
+          width: 10px;
+          height: 10px;
+          border-top: solid 2px #ECECF2;
+          border-right: solid 2px #ECECF2;
+          transform: rotate(45deg);
+          position: absolute;
+          top: 50%;
+          left: 0;
+          margin-top: -4px;
+          margin-left: -16px;
+        }
+      }
     }
 
     .search__area-link {

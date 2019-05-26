@@ -3,15 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { Subject } from 'rxjs/index';
-import {catchError, retry} from 'rxjs/internal/operators';
-import {environment} from '../../environments/environment';
+import { catchError, retry } from 'rxjs/internal/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TrainerListApiService {
   loadingError$ = new Subject<boolean>();
-  url = 'api/trainer/list';
+  url = '/api/trainer/list';
 
   constructor(private http: HttpClient) {}
 
