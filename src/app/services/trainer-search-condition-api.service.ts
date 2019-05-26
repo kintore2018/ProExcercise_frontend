@@ -4,22 +4,17 @@ import { Observable } from 'rxjs';
 
 import { AbstractApiService } from './abstract-api.service';
 
-export interface IArea {
-  areaId: number;
-  areaName: string;
+export interface IItem {
+  id: number;
+  name: string;
 }
 
 export interface IAreas {
-  areas: IArea[];
-}
-
-export interface ISkilltag {
-  tagId: number;
-  tag: string;
+  areas: IItem[];
 }
 
 export interface ISkilltags {
-  skilltags: ISkilltag[];
+  skilltags: IItem[];
 }
 
 @Injectable({

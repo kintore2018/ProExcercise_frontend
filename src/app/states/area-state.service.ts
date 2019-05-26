@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { AbstractStateService } from './abstract-state.service';
-import { IArea, IAreas, TrainerSearchConditionApiService } from '../services/trainer-search-condition-api.service';
+import { IItem, IAreas, TrainerSearchConditionApiService } from '../services/trainer-search-condition-api.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AreaStateService extends AbstractStateService<IArea[]> {
+export class AreaStateService extends AbstractStateService<IItem[]> {
 
   public defaultState = null;
-  public subject = new BehaviorSubject<IArea[]>(this.defaultState);
+  public subject = new BehaviorSubject<IItem[]>(this.defaultState);
 
 
   constructor(

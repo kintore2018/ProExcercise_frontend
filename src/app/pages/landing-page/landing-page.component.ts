@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IArea, ISkilltag } from '../../services/trainer-search-condition-api.service';
+import { IItem } from '../../services/trainer-search-condition-api.service';
 import { AreaStateService } from 'src/app/states/area-state.service';
 import { SkilltagStateService } from 'src/app/states/skilltag-state.service';
 import { Observable } from 'rxjs';
@@ -11,8 +11,8 @@ import { Observable } from 'rxjs';
 })
 export class LandingPageComponent implements OnInit {
 
-  public areas$: Observable<IArea[]>;
-  public skilltags$: Observable<ISkilltag[]>;
+  public areas$: Observable<IItem[]>;
+  public skilltags$: Observable<IItem[]>;
 
   constructor(
     private areaState: AreaStateService,

@@ -1,5 +1,8 @@
 <app-header></app-header>
 <main>
+  <section>
+    <app-trainer-search-condition></app-trainer-search-condition>
+  </section>
   <section class="container">
     <ng-container *ngIf="trainers$ | async as trainers; else loadingOrError">
       <ul class="list">

@@ -13,6 +13,7 @@ import { PrivacyPolicyPageComponent } from './pages/privacy-policy-page/privacy-
 import { RequestFormPageComponent } from './pages/request-form-page/request-form-page.component';
 
 import { ApiRequestInterceptor } from './interceptors/api-request.interceptor';
+import { TrainerSearchConditionComponent } from './components/trainer-search-condition/trainer-search-condition.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ApiRequestInterceptor } from './interceptors/api-request.interceptor';
     TrainerDetailPageComponent,
     PrivacyPolicyPageComponent,
     RequestFormPageComponent,
+    TrainerSearchConditionComponent,
   ],
   imports: [
     BrowserModule,
