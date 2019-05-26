@@ -1,2 +1,36 @@
-<button></button>
-<button></button>
+<a
+  href="javascript:void(0)"
+  [class.is-selected]="selectItems.length"
+  (click)="toggle()"
+>
+  {{label}}
+  <ng-container *ngIf="hasMultipleSelect()">
+    <span>+ {{selectItems.length - 1}}</span>
+  </ng-container>
+</a>
+<ng-container *ngIf="isOpen">
+  <ul>
+    <li class="title">
+      <strong>{{defaultLabel}}で絞り込む</strong>
+      <a href="javascript:void(0)" (click)="toggle()">✕</a>
+    </li>
+    <li>
+      <strong>sibuya</strong>
+      <div>
+        <input name="check" type="checkbox">
+        <label for="check"></label>
+      </div>
+      
+    </li>
+    <ng-container *ngFor="let choice of choices">
+      <li>
+        {{choice.name}}
+        <input type="checkbox">
+      </li>
+    </ng-container>
+    <li>
+      <a href="javascript:void(0)" (click)="clear()">クリア</a>
+      <a href="javascript:void(0)" (click)="search()">完了</a>
+    </li>
+  </ul>
+</ng-container>

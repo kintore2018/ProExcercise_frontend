@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AbstractStateService } from './abstract-state.service';
-import { ISkilltags, IItem, TrainerSearchConditionApiService } from '../services/trainer-search-condition-api.service';
+import { ISkillTags, IItem, TrainerSearchConditionApiService } from '../services/trainer-search-condition-api.service';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SkilltagStateService extends AbstractStateService<IItem[]> {
+export class SkillTagStateService extends AbstractStateService<IItem[]> {
 
   public defaultState = null;
   public subject = new BehaviorSubject<IItem[]>(this.defaultState);
@@ -18,6 +18,8 @@ export class SkilltagStateService extends AbstractStateService<IItem[]> {
   }
 
   public fetchSkilltag(): void {
-    this.trainerSearchCondition.fetchSkillTag().subscribe((res: ISkilltags) => this.setValue(res.skilltags));
+    this.trainerSearchCondition.fetchSkillTag().subscribe((res: ISkillTags) => {
+      this.setValue(res.skillTags);
+    });
   }
 }

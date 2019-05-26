@@ -20,18 +20,6 @@
               </li>
             </ng-container>
           </ng-container>
-          <li>
-            <a href="javascript:void(0)" routerLink="/trainers" [queryParams]="{area: 1}">渋谷<span class="arrow"></span></a>
-          </li> 
-          <li>
-            <a href="javascript:void(0)">恵比寿<span class="arrow"></span></a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">目黒<span class="arrow"></span></a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">中目黒<span class="arrow"></span></a>
-          </li>
         </ul>
         <a href="javascript:void(0)" routerLink="/trainers" class="search__area-link">すべて見る
           <svg width="6" height="14" viewBox="0 0 8 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
@@ -42,28 +30,13 @@
       <div class="container">
         <h2 class="search__title">目的で選ぶ</h2>
         <ul class="search__list">
-          <ng-container *ngIf="skilltags$ | async as skilltags">
-            <ng-container *ngFor="let skilltag of skilltags">
+          <ng-container *ngIf="skillTags$ | async as skillTags">
+            <ng-container *ngFor="let skillTag of skillTags">
               <li>
-                <a href="javascript:void(0)" routerLink="/trainers" [queryParams]="{skilltag: skilltag.id}">{{skilltag.name}}<span class="arrow"></span></a>
+                <a href="javascript:void(0)" routerLink="/trainers" [queryParams]="{skillTag: skillTag.id}">{{skillTag.name}}<span class="arrow"></span></a>
               </li>
             </ng-container>
           </ng-container>
-          <li>
-            <a href="javascript:void(0)">ダイエット<span class="arrow"></span></a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">ボディメイク<span class="arrow"></span></a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">食事管理<span class="arrow"></span></a>
-          </li>
-          <li>
-            <a href="javascript:void(0)">肩こり・腰痛改善<span class="arrow"></span></a>
-          </li>
-          <li>
-            <a href="">運動機能改善<span class="arrow"></span></a>
-          </li>
         </ul>
       </div>
     </div>

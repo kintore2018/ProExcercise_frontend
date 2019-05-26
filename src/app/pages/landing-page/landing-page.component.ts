@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IItem } from '../../services/trainer-search-condition-api.service';
 import { AreaStateService } from 'src/app/states/area-state.service';
-import { SkilltagStateService } from 'src/app/states/skilltag-state.service';
+import { SkillTagStateService } from 'src/app/states/skilltag-state.service';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -12,18 +12,18 @@ import { Observable } from 'rxjs';
 export class LandingPageComponent implements OnInit {
 
   public areas$: Observable<IItem[]>;
-  public skilltags$: Observable<IItem[]>;
+  public skillTags$: Observable<IItem[]>;
 
   constructor(
     private areaState: AreaStateService,
-    private skilltagState: SkilltagStateService,
+    private skillTagState: SkillTagStateService,
   ) { }
 
   ngOnInit() {
     this.areaState.fetchArea();
     this.areas$ = this.areaState.$;
-    this.skilltagState.fetchSkilltag();
-    this.skilltags$ = this.skilltagState.$;
+    this.skillTagState.fetchSkilltag();
+    this.skillTags$ = this.skillTagState.$;
   }
 
 }

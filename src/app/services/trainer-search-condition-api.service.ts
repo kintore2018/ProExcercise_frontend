@@ -13,8 +13,8 @@ export interface IAreas {
   areas: IItem[];
 }
 
-export interface ISkilltags {
-  skilltags: IItem[];
+export interface ISkillTags {
+  skillTags: IItem[];
 }
 
 @Injectable({
@@ -32,7 +32,7 @@ export class TrainerSearchConditionApiService extends AbstractApiService {
     return this.fetch('/api/area/list');
   }
 
-  public fetchSkillTag(): Observable<ISkilltags> {
-    return this.fetch('/api/trainer/skilltag/list');
+  public fetchSkillTag(): Observable<ISkillTags> {
+    return this.fetch('/api/trainer/skill/tag/list');
   }
 }
