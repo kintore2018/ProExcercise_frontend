@@ -16,12 +16,12 @@
           <ng-container *ngIf="areas$ | async as areas">
             <ng-container *ngFor="let area of areas">
               <li>
-                <a href="javascript:void(0)" routerLink="/trainers" queryParams="{{{area: area.areaId}}}">{{area.areaName}}<span class="arrow"></span></a>
+                <a href="javascript:void(0)" routerLink="/trainers" [queryParams]="{area: 1}">{{area.areaName}}<span class="arrow"></span></a>
               </li>
             </ng-container>
           </ng-container>
           <li>
-            <a href="javascript:void(0)" routerLink="/trainers" [queryParams]="{area: 1}">渋谷<span class="arrow"></span></a>
+            <a href="javascript:void(0)" routerLink="/trainers" [queryParams]="{area: area.areaId}">渋谷<span class="arrow"></span></a>
           </li> 
           <li>
             <a href="javascript:void(0)">恵比寿<span class="arrow"></span></a>
@@ -45,7 +45,7 @@
           <ng-container *ngIf="skilltags$ | async as skilltags">
             <ng-container *ngFor="let skilltag of skilltags">
               <li>
-                <a href="javascript:void(0)" routerLink="/trainers" queryParams="{{{skilltag: skilltag.skilltagId}}}">{{skilltag.skilltagName}}<span class="arrow"></span></a>
+                <a href="javascript:void(0)" routerLink="/trainers" [queryParams]="{skilltag: skilltag.skilltagId}">{{skilltag.skilltagName}}<span class="arrow"></span></a>
               </li>
             </ng-container>
           </ng-container>
