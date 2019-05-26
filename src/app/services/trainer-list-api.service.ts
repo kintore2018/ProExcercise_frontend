@@ -1,18 +1,18 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
-import { HttpErrorResponse } from "@angular/common/http"
-import { Observable, throwError } from "rxjs";
-import { Subject } from "rxjs/index"
-import {catchError, retry} from "rxjs/internal/operators";
-import {environment} from "../../environments/environment";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { HttpErrorResponse } from '@angular/common/http';
+import { Observable, throwError } from 'rxjs';
+import { Subject } from 'rxjs/index';
+import {catchError, retry} from 'rxjs/internal/operators';
+import {environment} from '../../environments/environment';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class TrainerListApiService {
   loadingError$ = new Subject<boolean>();
-  url = environment.apiBaseUrl + "api/trainer/list";
-  // url = "assets/mock/sample.json";
+  url = environment.apiBaseUrl + 'api/trainer/list';
+  // url = 'assets/mock/sample.json';
 
   constructor(private http: HttpClient) {}
 
@@ -38,6 +38,6 @@ export class TrainerListApiService {
     // return an observable with a user-facing error message
     return throwError(
       alert('通信エラーが発生しました。ブラウザを再読み込みしてください。'));
-  };
+  }
 
 }
