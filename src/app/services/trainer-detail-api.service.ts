@@ -22,8 +22,7 @@ export interface TrainerDetail {
 
 @Injectable({ providedIn: 'root' })
 export class TrainerDetailApiService {
-  url = environment.apiBaseUrl + 'api/trainer/details/';
-  // url = 'assets/mock/detail.json';
+  url = 'api/trainer/details/';
 
   constructor(private http: HttpClient) {}
 

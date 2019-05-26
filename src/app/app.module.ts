@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +11,8 @@ import { TrainersPageComponent } from './pages/trainers-page/trainers-page.compo
 import { TrainerDetailPageComponent } from './pages/trainer-detail-page/trainer-detail-page.component';
 import { PrivacyPolicyPageComponent } from './pages/privacy-policy-page/privacy-policy-page.component';
 import { RequestFormPageComponent } from './pages/request-form-page/request-form-page.component';
+
+import { ApiRequestInterceptor } from './interceptors/api-request.interceptor';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,13 @@ import { RequestFormPageComponent } from './pages/request-form-page/request-form
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ApiRequestInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

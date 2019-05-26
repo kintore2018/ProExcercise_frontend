@@ -11,8 +11,7 @@ import {environment} from '../../environments/environment';
 })
 export class TrainerListApiService {
   loadingError$ = new Subject<boolean>();
-  url = environment.apiBaseUrl + 'api/trainer/list';
-  // url = 'assets/mock/sample.json';
+  url = 'api/trainer/list';
 
   constructor(private http: HttpClient) {}
 
