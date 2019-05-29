@@ -5,7 +5,7 @@
 >
   {{label}}
   <ng-container *ngIf="hasMultipleSelect()">
-    <span>+ {{selectItems.length - 1}}</span>
+    <span>+{{selectItems.length - 1}}</span>
   </ng-container>
 </a>
 <ng-container *ngIf="isOpen">
@@ -14,18 +14,18 @@
       <strong>{{defaultLabel}}で絞り込む</strong>
       <a href="javascript:void(0)" (click)="toggle()">✕</a>
     </li>
-    <li>
-      <strong>sibuya</strong>
-      <div>
-        <input name="check" type="checkbox">
-        <label for="check"></label>
-      </div>
-      
-    </li>
     <ng-container *ngFor="let choice of choices">
       <li>
-        {{choice.name}}
-        <input type="checkbox">
+        <strong>{{choice.name}}</strong>
+        <div>
+          <input
+            type="checkbox"
+            id="{{choice.id}}"
+            name="{{choice.id}}"
+            (change)="check($event, choice)"
+          >
+          <label for="{{choice.id}}"></label>
+        </div>
       </li>
     </ng-container>
     <li>

@@ -3,6 +3,23 @@
   margin-top: 32px;
 }
 
+.search-condition {
+  display: flex;
+  border-bottom: 1px solid #ECECF2;
+
+  & > * {
+    margin-top: 24px;
+  }
+
+  & > * + * {
+    margin-left: 12px;
+  }
+}
+
+h2 {
+  font-size: 20px;
+}
+
 .title {
   text-align: center;
   font-size: 2rem;
@@ -100,7 +117,7 @@
   .container {
     max-width: 1024px;
     margin: auto;
-    padding-bottom: 32px;
+    padding-bottom: 24px;
   }
 
   // space-betweenで両端にアイテムが配置されるのを解消するため

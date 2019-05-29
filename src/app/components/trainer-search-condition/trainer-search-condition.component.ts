@@ -46,4 +46,15 @@ export class TrainerSearchConditionComponent implements OnInit {
     this.toggle();
   }
 
+  public check(event: Event, selectItem: IItem): void {
+    const target = event.target as HTMLInputElement;
+    if (target.checked) {
+      this.selectItems.push(selectItem);
+    } else {
+      this.selectItems = this.selectItems.filter(item => item.id !== selectItem.id);
+    }
+
+    this.setLabel();
+  }
+
 }

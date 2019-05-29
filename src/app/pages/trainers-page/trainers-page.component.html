@@ -1,9 +1,21 @@
 <app-header></app-header>
 <main>
-  <section class="container">
-    <app-trainer-search-condition [defaultLabel]="'エリア'"></app-trainer-search-condition>
+  <section class="container search-condition">
+    <ng-container *ngIf="areas$ | async as areas">
+      <app-trainer-search-condition
+        defaultLabel="エリア"
+        [choices]="areas"
+      ></app-trainer-search-condition>
+    </ng-container>
+    <ng-container *ngIf="skillTags$ | async as skillTags">
+      <app-trainer-search-condition
+        defaultLabel="目的"
+        [choices]="skillTags"
+      ></app-trainer-search-condition>
+    </ng-container>
   </section>
   <section class="container">
+    <h2>検索結果</h2>
     <ng-container *ngIf="trainers$ | async as trainers; else loadingOrError">
       <ul class="list">
         <ng-container *ngFor="let trainer of trainers.trainers">

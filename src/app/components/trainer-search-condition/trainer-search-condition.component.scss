@@ -1,7 +1,12 @@
+:host {
+  position: relative;
+}
+
 a {
   display: inline-block;
   padding: 4px 8px;
   font-size: 1.6rem;
+  font-weight: bold;
   color: #333;
   border: 1px solid #aaa;
   border-radius: 4px;
@@ -11,13 +16,27 @@ a {
     background-color: #2757FC;
     border: 1px solid #2757FC;
   }
+
+  &.is-selected {
+    color: #FFF;
+    background-color: #2757FC;
+    border: 1px solid #2757FC;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
 
 ul {
-  width: auto;
+  position: absolute;
+  left: 0;
+  top: calc(100% + 16px);
+  width: 380px;
+  z-index: 100;
+  background-color: #FFF;
   border-radius: 0 0 8px 8px;
   box-shadow: 0 10px 29px 0 rgba(0,0,0,.28);
-  position: static;
 
   li {  
     padding: 16px;
@@ -27,15 +46,52 @@ ul {
     input[type=checkbox] {
       display: none;
 
-      & ~ label {
-        border: 1px solid #333;
-        border-radius: 10px;
+      & + label {
+        position: relative;
+        cursor: pointer;
 
+        &:hover {
+          opacity: 0.6;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          right: 10px;
+          top: 6px;
+          display: inline-block;
+          width: 10px;
+          height: 15px;
+          border-bottom: 2px solid #333;
+          border-right: 2px solid #333;
+          transform: rotate(45deg);
+          transition: all 0.3s ease-in-out;
+          z-index: 100;
+        }
         &::after {
           content: '';
-          border-bottom: 4px solid #333;
-          border-right: 8px solid #333;
+          position: absolute;
+          right: 0;
+          display: inline-block;
+          width: 30px;
+          height: 30px;
+          border: 2px solid #333;
+          border-radius: 100%;
+          transition: all 0.3s ease-in-out;
         }
+      }
+
+      &:checked + label {
+        &::before {
+          border-bottom: 4px solid #FFF;
+          border-right: 4px solid #FFF;
+        }
+
+        &::after {
+          background-color: #2757FC;
+          border-color: #2757FC;
+        }
+
       }
     }
 
