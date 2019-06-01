@@ -12,25 +12,17 @@
   <ul>
     <li class="title">
       <strong>{{defaultLabel}}で絞り込む</strong>
-      <a href="javascript:void(0)" (click)="toggle()">✕</a>
+      <a href="javascript:void(0)" class="close" (click)="toggle()">✕</a>
     </li>
     <ng-container *ngFor="let choice of choices">
       <li>
         <strong>{{choice.name}}</strong>
-        <div>
-          <input
-            type="checkbox"
-            id="{{choice.id}}"
-            name="{{choice.id}}"
-            (change)="check($event, choice)"
-          >
-          <label for="{{choice.id}}"></label>
-        </div>
+        <app-checkbox (click)="check($event, choice)" [key]="choice.id"></app-checkbox>
       </li>
     </ng-container>
     <li>
       <a href="javascript:void(0)" (click)="clear()">クリア</a>
-      <a href="javascript:void(0)" (click)="search()">完了</a>
+      <a href="javascript:void(0)" (click)="search()" class="primary">完了</a>
     </li>
   </ul>
 </ng-container>

@@ -14,6 +14,7 @@ import { RequestFormPageComponent } from './pages/request-form-page/request-form
 
 import { ApiRequestInterceptor } from './interceptors/api-request.interceptor';
 import { TrainerSearchConditionComponent } from './components/trainer-search-condition/trainer-search-condition.component';
+import { CheckboxComponent } from './atoms/checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TrainerSearchConditionComponent } from './components/trainer-search-con
     PrivacyPolicyPageComponent,
     RequestFormPageComponent,
     TrainerSearchConditionComponent,
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,
