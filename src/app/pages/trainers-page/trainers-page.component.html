@@ -5,12 +5,16 @@
       <app-trainer-search-condition
         defaultLabel="エリア"
         [choices]="areas"
+        [selectItems]="selectAreas"
+        (search)="onSearch($event, true)"
       ></app-trainer-search-condition>
     </ng-container>
     <ng-container *ngIf="skillTags$ | async as skillTags">
       <app-trainer-search-condition
         defaultLabel="目的"
         [choices]="skillTags"
+        [selectItems]="selectSkillTags"
+        (search)="onSearch($event, false)"
       ></app-trainer-search-condition>
     </ng-container>
   </section>

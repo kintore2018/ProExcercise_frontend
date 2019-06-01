@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { IItem } from '../../services/trainer-search-condition-api.service';
 
 @Component({
@@ -10,7 +10,9 @@ export class TrainerSearchConditionComponent implements OnInit {
 
   @Input() public choices: IItem[];
   @Input() public defaultLabel: string;
-  @Input() public selectItems: IItem[] = [];
+  @Input() public selectItems: string[] = [];
+
+  @Output() search = new EventEmitter<string[]>();
 
   public label: string;
   public isOpen = false;
@@ -23,7 +25,11 @@ export class TrainerSearchConditionComponent implements OnInit {
 
   private setLabel(): void {
     if (Boolean(this.selectItems.length)) {
-      this.label = this.selectItems[0].name;
+      this.choices.map(choice => {
+        if (choice.id === parseInt(this.selectItems[0], 10)) {
+          this.label = choice.name;
+        }
+      });
     } else {
       this.label = this.defaultLabel;
     }
@@ -42,16 +48,17 @@ export class TrainerSearchConditionComponent implements OnInit {
     this.toggle();
   }
 
-  public search(): void {
+  public completeSearchCondition(): void {
+    this.search.emit(this.selectItems);
     this.toggle();
   }
 
   public check(event: Event, selectItem: IItem): void {
     const target = event.target as HTMLInputElement;
     if (target.checked) {
-      this.selectItems.push(selectItem);
+      this.selectItems.push(String(selectItem.id));
     } else {
-      this.selectItems = this.selectItems.filter(item => item.id !== selectItem.id);
+      this.selectItems = this.selectItems.filter(item => parseInt(item, 10) !== selectItem.id);
     }
 
     this.setLabel();

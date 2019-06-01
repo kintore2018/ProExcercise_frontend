@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/index';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 import {
-  TrainerListApiService
+  TrainerListApiService,
+  ITrainerListRequest
 } from '../../services/trainer-list-api.service';
-import { AreaStateService } from 'src/app/states/area-state.service';
+import { AreaStateService } from '../../states/area-state.service';
 import { IItem } from '../../services/trainer-search-condition-api.service';
-import { SkillTagStateService } from 'src/app/states/skilltag-state.service';
+import { SkillTagStateService } from '../../states/skilltag-state.service';
 
 @Component({
   selector: 'app-trainers-page',
@@ -17,13 +19,18 @@ export class TrainersPageComponent implements OnInit {
   public areas$: Observable<IItem[]>;
   public skillTags$: Observable<IItem[]>;
 
+  public selectAreas: string[] = [];
+  public selectSkillTags: string[] = [];
+
   constructor(
     private trainerListAPI: TrainerListApiService,
     private areaState: AreaStateService,
     private skillTagState: SkillTagStateService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
+    this.setSearchCondition();
     this.getTrainers();
     // TODO 前のページでfetchした場合はローカルメモリから取得する
     this.areaState.fetchArea();
@@ -33,6 +40,32 @@ export class TrainersPageComponent implements OnInit {
   }
 
   private getTrainers(): void {
-    this.trainers$ = this.trainerListAPI.getTrainers();
+    const params = {} as ITrainerListRequest;
+    if (this.selectAreas.length) {
+      params.areaIds = this.selectAreas;
+    }
+
+    if (this.selectSkillTags.length) {
+      params.skillTagIds = this.selectSkillTags;
+    }
+    this.trainers$ = this.trainerListAPI.getTrainers(params);
+  }
+
+  private setSearchCondition(): void {
+    const area = this.route.snapshot.queryParamMap.get('area');
+    const skillTag = this.route.snapshot.queryParamMap.get('skillTag');
+
+    if (area) {
+      this.selectAreas.push(area);
+    }
+
+    if (skillTag) {
+      this.selectSkillTags.push(skillTag);
+    }
+  }
+
+  public onSearch(items: string[], isArea = false): void {
+    isArea ? this.selectAreas = items : this.selectSkillTags = items;
+    this.getTrainers();
   }
 }

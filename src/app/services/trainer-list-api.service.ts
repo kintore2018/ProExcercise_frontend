@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
-import { Observable, throwError } from 'rxjs';
-import { Subject } from 'rxjs/index';
+import { Observable, throwError, Subject } from 'rxjs';
 import { catchError, retry } from 'rxjs/internal/operators';
+
+export interface ITrainerListRequest extends HttpParams {
+  areaIds?: string[];
+  skillTagIds?: string[];
+}
 
 @Injectable({
   providedIn: 'root'
@@ -14,8 +18,8 @@ export class TrainerListApiService {
 
   constructor(private http: HttpClient) {}
 
-  getTrainers(): Observable<any> {
-    return this.http.get<any>(this.url)
+  getTrainers(params: ITrainerListRequest): Observable<any> {
+    return this.http.get<any>(this.url, {params})
       .pipe(
         retry(3),
         catchError(this.handleError)
