@@ -14,10 +14,12 @@
         <h2 class="search__title">エリアで選ぶ</h2>
         <ul class="search__list">
           <ng-container *ngIf="areas$ | async as areas">
-            <ng-container *ngFor="let area of areas">
-              <li>
-                <a href="javascript:void(0)" routerLink="/trainers" [queryParams]="{area: area.id}">{{area.name}}<span class="arrow"></span></a>
-              </li>
+            <ng-container *ngFor="let area of areas; let i = index">
+              <ng-container *ngIf="i < 5">
+                <li>
+                  <a href="javascript:void(0)" routerLink="/trainers" [queryParams]="{area: area.id}">{{area.name}}<span class="arrow"></span></a>
+                </li>
+              </ng-container>
             </ng-container>
           </ng-container>
         </ul>
