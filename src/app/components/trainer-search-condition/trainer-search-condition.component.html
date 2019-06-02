@@ -17,7 +17,12 @@
     <ng-container *ngFor="let choice of choices">
       <li>
         <strong>{{choice.name}}</strong>
-        <app-checkbox (click)="check($event, choice)" [key]="choice.id"></app-checkbox>
+        <app-checkbox
+          [key]="choice.id"
+          [checked]="isChecked(choice.id)"
+          (change)="check($event, choice)"
+        >
+        </app-checkbox>
       </li>
     </ng-container>
     <li>

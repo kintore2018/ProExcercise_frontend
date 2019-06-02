@@ -22,6 +22,11 @@ export class TrainersPageComponent implements OnInit {
   public selectAreas: string[] = [];
   public selectSkillTags: string[] = [];
 
+  public open = {
+    area: false,
+    skillTag: false
+  };
+
   constructor(
     private trainerListAPI: TrainerListApiService,
     private areaState: AreaStateService,
@@ -67,5 +72,12 @@ export class TrainersPageComponent implements OnInit {
   public onSearch(items: string[], isArea = false): void {
     isArea ? this.selectAreas = items : this.selectSkillTags = items;
     this.getTrainers();
+  }
+
+  public onOpen(isArea: boolean): void {
+    this.open = {
+      area: isArea,
+      skillTag: !isArea
+    };
   }
 }

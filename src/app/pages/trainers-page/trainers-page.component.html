@@ -6,7 +6,9 @@
         defaultLabel="エリア"
         [choices]="areas"
         [selectItems]="selectAreas"
+        [isOpen]="open.area"
         (search)="onSearch($event, true)"
+        (open)="onOpen(true)"
       ></app-trainer-search-condition>
     </ng-container>
     <ng-container *ngIf="skillTags$ | async as skillTags">
@@ -14,7 +16,9 @@
         defaultLabel="目的"
         [choices]="skillTags"
         [selectItems]="selectSkillTags"
+        [isOpen]="open.skillTag"
         (search)="onSearch($event, false)"
+        (open)="onOpen(false)"
       ></app-trainer-search-condition>
     </ng-container>
   </section>

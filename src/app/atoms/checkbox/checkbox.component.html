@@ -2,5 +2,7 @@
   type="checkbox"
   [id]="key"
   [name]="key"
+  [checked]="checked"
+  (change)="onChange($event)"
 >
 <label [for]="key"></label>

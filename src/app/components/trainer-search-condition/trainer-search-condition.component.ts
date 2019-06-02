@@ -11,11 +11,12 @@ export class TrainerSearchConditionComponent implements OnInit {
   @Input() public choices: IItem[];
   @Input() public defaultLabel: string;
   @Input() public selectItems: string[] = [];
+  @Input() public isOpen = false;
 
   @Output() search = new EventEmitter<string[]>();
+  @Output() open = new EventEmitter<boolean>();
 
   public label: string;
-  public isOpen = false;
 
   constructor() { }
 
@@ -41,10 +42,16 @@ export class TrainerSearchConditionComponent implements OnInit {
 
   public toggle(): void {
     this.isOpen = !this.isOpen;
+
+    if (this.isOpen) {
+      this.open.emit();
+    }
   }
 
   public clear(): void {
     this.selectItems = [];
+    this.search.emit(this.selectItems);
+    this.setLabel();
     this.toggle();
   }
 
@@ -53,15 +60,18 @@ export class TrainerSearchConditionComponent implements OnInit {
     this.toggle();
   }
 
-  public check(event: Event, selectItem: IItem): void {
-    const target = event.target as HTMLInputElement;
-    if (target.checked) {
+  public check(checked: boolean, selectItem: IItem): void {
+    if (checked) {
       this.selectItems.push(String(selectItem.id));
     } else {
       this.selectItems = this.selectItems.filter(item => parseInt(item, 10) !== selectItem.id);
     }
 
     this.setLabel();
+  }
+
+  public isChecked(id: number): boolean {
+    return this.selectItems.includes(String(id));
   }
 
 }
