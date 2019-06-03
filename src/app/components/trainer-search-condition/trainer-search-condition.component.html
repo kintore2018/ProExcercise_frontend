@@ -9,25 +9,28 @@
   </ng-container>
 </a>
 <ng-container *ngIf="isOpen">
-  <ul>
-    <li class="title">
+  <section class="background"></section>
+  <section class="filter">
+    <div class="filter-title">
       <strong>{{defaultLabel}}で絞り込む</strong>
       <a href="javascript:void(0)" class="close" (click)="toggle()">✕</a>
-    </li>
-    <ng-container *ngFor="let choice of choices">
-      <li>
-        <strong>{{choice.name}}</strong>
-        <app-checkbox
-          [key]="choice.id"
-          [checked]="isChecked(choice.id)"
-          (change)="check($event, choice)"
-        >
-        </app-checkbox>
-      </li>
-    </ng-container>
-    <li>
+    </div>
+    <ul>
+      <ng-container *ngFor="let choice of choices">
+        <li>
+          <strong>{{choice.name}}</strong>
+          <app-checkbox
+            [key]="choice.id"
+            [checked]="isChecked(choice.id)"
+            (change)="check($event, choice)"
+          >
+          </app-checkbox>
+        </li>
+      </ng-container>
+    </ul>
+    <div class="filter-controls">
       <a href="javascript:void(0)" (click)="clear()">クリア</a>
       <a href="javascript:void(0)" (click)="completeSearchCondition()" class="primary">完了</a>
-    </li>
-  </ul>
+    </div>
+  </section>
 </ng-container>
