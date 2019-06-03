@@ -1,7 +1,7 @@
 <app-header></app-header>
 <main>
-  <section class="container search-condition">
-    <ng-container *ngIf="areas$ | async as areas">
+  <section class="search-condition">
+    <ng-container *ngIf="areas$ | async as areas; else elseArea">
       <app-trainer-search-condition
         defaultLabel="エリア"
         [choices]="areas"
@@ -11,7 +11,10 @@
         (open)="onOpen(true)"
       ></app-trainer-search-condition>
     </ng-container>
-    <ng-container *ngIf="skillTags$ | async as skillTags">
+    <ng-template #elseArea>
+      <a href="javascript:void(0)" class="dummy">エリア</a>
+    </ng-template>
+    <ng-container *ngIf="skillTags$ | async as skillTags; else elseSkillTag">
       <app-trainer-search-condition
         defaultLabel="目的"
         [choices]="skillTags"
@@ -21,6 +24,9 @@
         (open)="onOpen(false)"
       ></app-trainer-search-condition>
     </ng-container>
+    <ng-template #elseSkillTag>
+      <a href="javascript:void(0)" class="dummy">目的</a>
+    </ng-template>
   </section>
   <section class="container">
     <h2>検索結果</h2>
