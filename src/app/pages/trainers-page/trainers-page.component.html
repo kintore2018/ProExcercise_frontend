@@ -35,13 +35,21 @@
         <ng-container *ngFor="let trainer of trainers.trainers">
           <li class="list__item">
             <a routerLink="/trainers/detail/{{trainer.trainerId}}">
-              <div class="list__item__img">
-                <img src={{trainer.imagePath}} alt="">
+              <div class="list__item__top">
+                <div class="list__item__top__img">
+                  <img src={{trainer.imagePath}} alt="">
+                </div>
+                <div class="list__item__top__info">
+                  <h2 class="list__item__top__info__area">{{ trainer.area }}</h2>
+                  <h3 class="list__item__top__info__name">{{ trainer.trainerName }}</h3>
+                </div>
               </div>
-              <div class="list__item__info">
-                <h2 class="list__item__info__area">{{ trainer.area }}</h2>
-                <h3 class="list__item__info__name">{{ trainer.trainerName }}</h3>
-              </div>
+              <ul class="list__item__tag">
+                <ng-container *ngFor="let tag of trainer.tags">
+                  <li>{{tag}}</li>
+                </ng-container>
+                
+              </ul>
             </a>
           </li>
         </ng-container>
