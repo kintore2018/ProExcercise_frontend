@@ -107,7 +107,8 @@ a {
   .filter {
     position: absolute;
     width: 380px;
-    max-height: 100vh;
+    height: fit-content;
+    max-height: fit-content;
     top: calc(100% + 16px);
 
     ul { 
