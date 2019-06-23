@@ -12,11 +12,11 @@ input[type=checkbox] {
     &::before {
       content: '';
       position: absolute;
-      right: 10px;
-      top: 6px;
+      right: 12px;
+      top: 8px;
       display: inline-block;
-      width: 10px;
-      height: 15px;
+      width: 6px;
+      height: 12px;
       border-bottom: 2px solid #333;
       border-right: 2px solid #333;
       transform: rotate(45deg);
